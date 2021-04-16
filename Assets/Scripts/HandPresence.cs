@@ -5,8 +5,7 @@ using UnityEngine.XR;
 
 public class HandPresence : MonoBehaviour
 {
-    public InputDeviceCharacteristics controllerCharacteristics;
-    public List<GameObject> controllerPrefabs;
+    public XRNode inputSource;
     public GameObject handModelPrefab;
 
     private InputDevice targetDevice;
@@ -18,38 +17,31 @@ public class HandPresence : MonoBehaviour
     void Start()
     {
 
-        List<InputDevice> devices = new List<InputDevice>();
-        InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, devices);
-        Debug.Log(devices.Count);
-
-        foreach (var item in devices) {
-            Debug.Log(item.name + item.characteristics);
-        }
-
-        if(devices.Count > 0) {
-            targetDevice = devices[0];
-            spawnedHandModel = Instantiate(handModelPrefab, transform);
-            handAnimator = spawnedHandModel.GetComponent<Animator>();
-        }
+        targetDevice = InputDevices.GetDeviceAtXRNode(inputSource);
+        handAnimator = handModelPrefab.GetComponent<Animator>();
 
     }
 
-    void UpdateAniamtor() {
+    void UpdateAnimator() {
 
         if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue)) {
-            handAnimator.SetFloat("trigger", triggerValue);
+            handAnimator.SetFloat("Trigger", triggerValue);
         }
         else {
-            handAnimator.SetFloat("trigger", 0);
+            handAnimator.SetFloat("Trigger", 0);
         }
+
+        Debug.Log(triggerValue);
 
         if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
         {
-            handAnimator.SetFloat("grip", gripValue);
+            handAnimator.SetFloat("Grip", gripValue);
+
+            Debug.Log(gripValue);
         }
         else
         {
-            handAnimator.SetFloat("grip", 0);
+            handAnimator.SetFloat("Grip", 0);
         }
 
     }
@@ -58,7 +50,6 @@ public class HandPresence : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnedHandModel.SetActive(true);
-        //UpdateAniamtor();
+        UpdateAnimator();
     }
 }
