@@ -18,6 +18,7 @@ public class HandPresence : MonoBehaviour
     {
 
         targetDevice = InputDevices.GetDeviceAtXRNode(inputSource);
+        Debug.Log(targetDevice.name);
         handAnimator = handModelPrefab.GetComponent<Animator>();
 
     }
@@ -31,13 +32,11 @@ public class HandPresence : MonoBehaviour
             handAnimator.SetFloat("Trigger", 0);
         }
 
-        Debug.Log(triggerValue);
 
         if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
         {
             handAnimator.SetFloat("Grip", gripValue);
 
-            Debug.Log(gripValue);
         }
         else
         {
@@ -50,6 +49,7 @@ public class HandPresence : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        targetDevice = InputDevices.GetDeviceAtXRNode(inputSource);
         UpdateAnimator();
     }
 }
