@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{EC3FD12B-5DFE-D831-ADB9-45E845EC4529}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ContinuousMovement.cs">
+    <Files>
+      <File FileName="Assets/Scripts/ContinuousMovement.cs" Line="36" Column="29" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d36f214c-7a52-4d9f-8ad7-b892a9ce749b" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
