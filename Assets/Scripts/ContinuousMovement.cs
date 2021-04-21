@@ -45,7 +45,7 @@ public class ContinuousMovement : MonoBehaviour
         if (GroundedCheck())
             fallingSpeed = 0;
         else
-            fallingSpeed += gravity * Time.fixedDeltaTime;
+            fallingSpeed -= gravity * Time.fixedDeltaTime;
         character.Move(Vector3.up * fallingSpeed * Time.fixedDeltaTime);
     }
 
