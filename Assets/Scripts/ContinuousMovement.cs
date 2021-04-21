@@ -8,7 +8,7 @@ public class ContinuousMovement : MonoBehaviour
 {
     public float speed = 1;
     public XRNode inputSource;
-    public float gravity = 9.81f;
+    public float gravity = -9.81f;
     public LayerMask groundLayer;
     public float additionalHeight = 0.2f;
 
@@ -45,8 +45,8 @@ public class ContinuousMovement : MonoBehaviour
         if (GroundedCheck())
             fallingSpeed = 0;
         else
-            fallingSpeed -= gravity * Time.fixedDeltaTime;
-        character.Move(Vector3.up * fallingSpeed * Time.fixedDeltaTime);
+            fallingSpeed += gravity * Time.fixedDeltaTime;
+        character.Move(Vector3.down * fallingSpeed * Time.fixedDeltaTime);
     }
 
     void CapsuleFollowHead()

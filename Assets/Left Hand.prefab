@@ -320,6 +320,8 @@ GameObject:
   - component: {fileID: -1205263816232618137}
   - component: {fileID: -7912568905542745888}
   - component: {fileID: -1452552498506355348}
+  - component: {fileID: -6157463793777848001}
+  - component: {fileID: 1121366022450582701}
   m_Layer: 0
   m_Name: Left Hand
   m_TagString: Untagged
@@ -389,6 +391,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputSource: 4
   handModelPrefab: {fileID: 109434732395284509}
+--- !u!33 &-6157463793777848001
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109434732395284509}
+  m_Mesh: {fileID: -4773355822595451164, guid: f957c2c6de3ddbb46aab38e5bbca868d, type: 3}
+--- !u!64 &1121366022450582701
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109434732395284509}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &109434732395284511
 GameObject:
   m_ObjectHideFlags: 0
