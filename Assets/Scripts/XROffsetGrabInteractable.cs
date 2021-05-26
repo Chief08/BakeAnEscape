@@ -8,6 +8,7 @@ public class XROffsetGrabInteractable : XRGrabInteractable
 
     private Vector3 initialAttachLocalPos;
     private Quaternion initialAttachLocalRot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +22,7 @@ public class XROffsetGrabInteractable : XRGrabInteractable
         initialAttachLocalPos = attachTransform.localPosition;
         initialAttachLocalRot = attachTransform.localRotation;
     }
-
-    protected override void OnSelectEntered(XRBaseInteractor interactor)
+    protected override void OnSelectEntering(XRBaseInteractor interactor)
     {
         if (interactor is XRDirectInteractor)
         {
@@ -35,6 +35,6 @@ public class XROffsetGrabInteractable : XRGrabInteractable
             attachTransform.rotation = initialAttachLocalRot;
         }
 
-        base.OnSelectEntered(interactor);
+        base.OnSelectEntering(interactor);
     }
 }
