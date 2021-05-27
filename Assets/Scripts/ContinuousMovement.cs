@@ -10,7 +10,7 @@ public class ContinuousMovement : MonoBehaviour
     public XRNode inputSource;
     public float gravity = -9.81f;
     public LayerMask groundLayer;
-    public float additionalHeight = 0.2f;
+    public float additionalHeight = 0.01f;
 
     private XRRig rig;
     private Vector2 inputAxis;
