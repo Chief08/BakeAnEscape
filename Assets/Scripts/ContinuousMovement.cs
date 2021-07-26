@@ -20,6 +20,7 @@ public class ContinuousMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        XRDevice.SetTrackingSpaceType(TrackingSpaceType.RoomScale);
         character = GetComponent<CharacterController>();
         rig = GetComponent<XRRig>();
     }
