@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class AngleCheck : MonoBehaviour
 {
-    public GameObject obj;
+    public GameObject obj,screen;
     private Quaternion angle;
     public bool doStuff;
+    private VideoPlayer player;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = screen.GetComponent<VideoPlayer>();
         doStuff = false;
     }
 
@@ -20,11 +23,11 @@ public class AngleCheck : MonoBehaviour
         angle = obj.transform.rotation;
         if (angle.x > 0.68f) 
         {
-            doStuff = true;
+            player.Play();
         }
         else
         {
-            doStuff = false;
+            player.Pause();
         }
     }
 }
