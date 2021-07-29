@@ -67,7 +67,7 @@ public class SoundTrigger : MonoBehaviour
                 audioSource.Stop();
             }
         }
-        if (Vector3.Distance(hand1Cord.transform.position, radioCord.transform.position) < 0.05f & triggerValue1 > 0.5)
+        if (Vector3.Distance(hand1Cord.transform.position, radioCord.transform.position) < 0.1f & triggerValue1 > 0.5)
         {
             on_off = !on_off;
             if (on_off)
