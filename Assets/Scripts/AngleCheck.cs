@@ -5,7 +5,7 @@ using UnityEngine.Video;
 
 public class AngleCheck : MonoBehaviour
 {
-    public GameObject obj,screen;
+    public GameObject obj,screen,lighto;
     private Quaternion angle;
     public bool doStuff;
     private VideoPlayer player;
@@ -23,11 +23,13 @@ public class AngleCheck : MonoBehaviour
         angle = obj.transform.rotation;
         if (angle.x > 0.68f) 
         {
+            lighto.SetActive(true);
             player.Play();
         }
         else
         {
-            player.Pause();
+            lighto.SetActive(false);
+            player.Stop();
         }
     }
 }

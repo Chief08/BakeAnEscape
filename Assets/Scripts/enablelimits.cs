@@ -5,6 +5,7 @@ using UnityEngine;
 public class enablelimits : MonoBehaviour
 {
     public GameObject limit0, limit1, knife;
+    public float detectiondistance;
     private float time0, time1;
 
 
@@ -36,7 +37,7 @@ public class enablelimits : MonoBehaviour
     float CheckDistance(GameObject x, float timer) 
     {
 
-        if (Vector3.Distance(x.transform.position, knife.transform.position) < 0.3 ) 
+        if (Vector3.Distance(x.transform.position, knife.transform.position) < detectiondistance ) 
         {
             x.SetActive(true);
             return Time.time;
