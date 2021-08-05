@@ -5,7 +5,7 @@ using UnityEngine.Video;
 
 public class AngleCheck : MonoBehaviour
 {
-    public GameObject obj,screen,lighto;
+    public GameObject obj,screen,lighto,spotlight0,spotlights1, door2;
     private Quaternion angle;
     public bool doStuff;
     private VideoPlayer player;
@@ -14,7 +14,7 @@ public class AngleCheck : MonoBehaviour
     void Start()
     {
         player = screen.GetComponent<VideoPlayer>();
-        doStuff = false;
+        doStuff = true;
     }
 
     // Update is called once per frame
@@ -22,13 +22,27 @@ public class AngleCheck : MonoBehaviour
     {
         angle = obj.transform.rotation;
         if (angle.x > 0.68f) 
-        {
-            lighto.SetActive(true);
+        {   
+            if(doStuff)
+            {
+                doStuff = !doStuff;
+                lighto.SetActive(true);
+
+            }
+            spotlight0.SetActive(true);
+            spotlights1.SetActive(true);
+            door2.GetComponent<AngleLockFree>().Freee();
+
             player.Play();
         }
         else
         {
+            doStuff = true;
             lighto.SetActive(false);
+            spotlight0.SetActive(false);
+            spotlights1.SetActive(false);
+            door2.GetComponent<AngleLockFree>().Lock();
+
             player.Stop();
         }
     }

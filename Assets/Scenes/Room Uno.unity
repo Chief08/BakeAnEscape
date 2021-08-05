@@ -224,6 +224,24 @@ Transform:
   m_Father: {fileID: 637123726}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &30531567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8022943174026963892, guid: 3ab3b3cf3ca581f44845e25b107e3966, type: 3}
+  m_PrefabInstance: {fileID: 628238198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &30531569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30531567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1558fbd04e2137408bd118775924c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list0: 
 --- !u!1 &46762677
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,6 +357,8 @@ GameObject:
   - component: {fileID: 122119766}
   - component: {fileID: 122119765}
   - component: {fileID: 122119767}
+  - component: {fileID: 122119777}
+  - component: {fileID: 122119776}
   m_Layer: 8
   m_Name: Drawer
   m_TagString: Untagged
@@ -691,6 +711,34 @@ Transform:
   m_Father: {fileID: 2365476845832238208}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 180, z: 0}
+--- !u!114 &122119776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122119764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e55dc66d44e86b488ecd35eca7470e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintobject: {fileID: 122119764}
+--- !u!138 &122119777
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122119764}
+  m_ConnectedBody: {fileID: 0}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &156026818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,6 +1615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 384702889}
   lever: {fileID: 167623218}
   leverlight: {fileID: 167623208}
 --- !u!114 &167623231
@@ -1581,6 +1630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 384702889}
   lever: {fileID: 167623219}
   leverlight: {fileID: 167623209}
 --- !u!114 &167623232
@@ -1595,6 +1645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 384702889}
   lever: {fileID: 167623220}
   leverlight: {fileID: 167623210}
 --- !u!114 &167623233
@@ -1609,6 +1660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 384702889}
   lever: {fileID: 167623221}
   leverlight: {fileID: 167623211}
 --- !u!114 &167623234
@@ -1623,6 +1675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 384702889}
   lever: {fileID: 167623222}
   leverlight: {fileID: 167623212}
 --- !u!114 &167623235
@@ -1637,6 +1690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 384702889}
   lever: {fileID: 167623223}
   leverlight: {fileID: 167623213}
 --- !u!114 &167623236
@@ -1651,6 +1705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 384702889}
   lever: {fileID: 167623224}
   leverlight: {fileID: 167623214}
 --- !u!114 &167623237
@@ -1665,6 +1720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 384702889}
   lever: {fileID: 167623225}
   leverlight: {fileID: 167623215}
 --- !u!114 &167623238
@@ -1679,6 +1735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 384702889}
   lever: {fileID: 167623226}
   leverlight: {fileID: 167623216}
 --- !u!114 &167623239
@@ -1693,6 +1750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 384702889}
   lever: {fileID: 167623227}
   leverlight: {fileID: 167623217}
 --- !u!114 &167623240
@@ -2230,6 +2288,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5426199199376921515, guid: 3ab3b3cf3ca581f44845e25b107e3966, type: 3}
   m_PrefabInstance: {fileID: 628238198}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &384702889 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8022943174026963892, guid: 3ab3b3cf3ca581f44845e25b107e3966, type: 3}
+  m_PrefabInstance: {fileID: 167623206}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &384702891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384702889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1558fbd04e2137408bd118775924c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list0: 
 --- !u!1 &392268565 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4521012655292991154, guid: 3ab3b3cf3ca581f44845e25b107e3966, type: 3}
@@ -2252,6 +2328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 30531567}
   lever: {fileID: 397128207}
   leverlight: {fileID: 908866323}
 --- !u!1001 &434317083
@@ -2441,6 +2518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 30531567}
   lever: {fileID: 558974966}
   leverlight: {fileID: 304764330}
 --- !u!1 &591984850 stripped
@@ -2470,6 +2548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 30531567}
   lever: {fileID: 624252152}
   leverlight: {fileID: 1597219774}
 --- !u!1001 &628238198
@@ -3031,6 +3110,10 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -2.77467
       objectReference: {fileID: 0}
+    - target: {fileID: 8022943174026963892, guid: 3ab3b3cf3ca581f44845e25b107e3966, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8168120251968017042, guid: 3ab3b3cf3ca581f44845e25b107e3966, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3393,8 +3476,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 30531567}
   lever: {fileID: 961835014}
   leverlight: {fileID: 765812568}
+--- !u!1 &972705195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5547644789461604785, guid: fe1a9a68e88027c4da25901e8f65f301, type: 3}
+  m_PrefabInstance: {fileID: 4628671663090415749}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &972705202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972705195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e55dc66d44e86b488ecd35eca7470e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintobject: {fileID: 972705195}
 --- !u!1 &1103335886
 GameObject:
   m_ObjectHideFlags: 0
@@ -3781,6 +3883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 30531567}
   lever: {fileID: 1286197643}
   leverlight: {fileID: 591984850}
 --- !u!1 &1292720126
@@ -3868,6 +3971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 30531567}
   lever: {fileID: 1329161986}
   leverlight: {fileID: 610236048}
 --- !u!1 &1344658648
@@ -3920,6 +4024,31 @@ FixedJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &1359454426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359454419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e55dc66d44e86b488ecd35eca7470e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintobject: {fileID: 1359454419}
+--- !u!114 &1359454427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359454419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2f3ff38fa11514a984d61ed5791d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1402562190 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 90491265601943226, guid: 0cf82ba912248b444a57d13226b78f19, type: 3}
@@ -3972,10 +4101,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -4087,7 +4216,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 0
+  m_Looping: 1
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
@@ -4422,6 +4551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 30531567}
   lever: {fileID: 1487700726}
   leverlight: {fileID: 436184038}
 --- !u!1 &1496661637 stripped
@@ -4555,6 +4685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 30531567}
   lever: {fileID: 1534775559}
   leverlight: {fileID: 308182598}
 --- !u!1 &1535693245 stripped
@@ -4892,6 +5023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 30531567}
   lever: {fileID: 1561025840}
   leverlight: {fileID: 360285971}
 --- !u!1 &1597219774 stripped
@@ -4924,6 +5056,8 @@ MonoBehaviour:
   riddleR: {fileID: 32900000, guid: feda5596b585fbb4b94cd1c3da5373b9, type: 3}
   riddleL: {fileID: 32900000, guid: feda5596b585fbb4b94cd1c3da5373b9, type: 3}
   emrgency: {fileID: 32900000, guid: 35fa14c9165b11b409a7989ae0014673, type: 3}
+  DrawerR: {fileID: 32900000, guid: feda5596b585fbb4b94cd1c3da5373b9, type: 3}
+  DrawerL: {fileID: 32900000, guid: feda5596b585fbb4b94cd1c3da5373b9, type: 3}
 --- !u!328 &1646112051
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -4971,10 +5105,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -5466,6 +5600,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5249772686846447413, guid: 229f568fb738fa94db3b367b14a35f03, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5249772686846447415, guid: 229f568fb738fa94db3b367b14a35f03, type: 3}
       propertyPath: m_Name
       value: CardF
@@ -5501,6 +5639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34f1eac1ff3c640ae2cdd451ebeabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 30531567}
   lever: {fileID: 1884556708}
   leverlight: {fileID: 392268565}
 --- !u!1 &1980874449 stripped
@@ -5661,6 +5800,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dswitch: {fileID: 1989518010}
+  console0: {fileID: 384702889}
+  console1: {fileID: 30531567}
+  screeno: {fileID: 1646112049}
+  drawer: {fileID: 122119764}
+  card: {fileID: 1359454419}
 --- !u!1 &2050827023
 GameObject:
   m_ObjectHideFlags: 0
@@ -5746,6 +5890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dswitch: {fileID: 2105961811}
   screen: {fileID: 1646112049}
+  cardholder: {fileID: 2580694325040618235}
 --- !u!1 &2118906224
 GameObject:
   m_ObjectHideFlags: 0
@@ -5860,6 +6005,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.27163377, y: 0.51147115, z: 0.0451029}
   m_Center: {x: -0.13173915, y: 0.25000012, z: 0.018853072}
+--- !u!114 &61349280972919441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61349280972919439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e55dc66d44e86b488ecd35eca7470e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintobject: {fileID: 61349280972919439}
 --- !u!59 &61349280972919443
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -6563,6 +6721,7 @@ MonoBehaviour:
   screen: {fileID: 1646112049}
   limit0: {fileID: 798268056}
   limit1: {fileID: 1344658648}
+  door: {fileID: 6728809341770664012}
 --- !u!1001 &2607597103682227770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7332,7 +7491,10 @@ MonoBehaviour:
   obj: {fileID: 6007858867926685051}
   screen: {fileID: 1646112049}
   lighto: {fileID: 1550250344}
-  doStuff: 0
+  spotlight0: {fileID: 30531567}
+  spotlights1: {fileID: 384702889}
+  door2: {fileID: 972705195}
+  doStuff: 1
 --- !u!1001 &6131227539278160390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7613,6 +7775,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.19999999, z: 0.02385354}
   m_Center: {x: -0.07837999, y: -0.09998858, z: 0.03183207}
+--- !u!114 &6728809341770664017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728809341770664012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e55dc66d44e86b488ecd35eca7470e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintobject: {fileID: 6728809341770664012}
+--- !u!138 &6728809341770664018
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728809341770664012}
+  m_ConnectedBody: {fileID: 0}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &7458901674891506810 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4878344310915365440, guid: 566188b3187cd9544af07d5db53b8f52, type: 3}

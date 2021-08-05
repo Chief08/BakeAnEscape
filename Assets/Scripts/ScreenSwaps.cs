@@ -6,7 +6,7 @@ using UnityEngine.Video;
 public class ScreenSwaps : MonoBehaviour
 {
     public GameObject screenL,screenR;
-    public VideoClip gas,logL, logR, riddleR, riddleL, emrgency; 
+    public VideoClip gas,logL, logR, riddleR, riddleL, emrgency, DrawerR, DrawerL; 
 
     public void ScreenLog() 
     {
@@ -18,6 +18,12 @@ public class ScreenSwaps : MonoBehaviour
     {
         ChangeClip(screenR, riddleR);
         ChangeClip(screenL, riddleL);
+    }
+
+    public void UnlockDrawer()
+    {
+        ChangeClip(screenR, DrawerR);
+        ChangeClip(screenL, DrawerL);
     }
 
     public void GasOn()
@@ -35,7 +41,9 @@ public class ScreenSwaps : MonoBehaviour
     public void ChangeClip(GameObject screeno , VideoClip nextclip)
     {
         VideoPlayer source = screeno.GetComponent<VideoPlayer>();
+        AudioSource audios = screeno.GetComponent<AudioSource>();
         source.Stop();
+        audios.Stop();
         source.clip = nextclip;
         source.Play();
     }
