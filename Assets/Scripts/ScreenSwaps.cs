@@ -46,5 +46,6 @@ public class ScreenSwaps : MonoBehaviour
         audios.Stop();
         source.clip = nextclip;
         source.Play();
+        Debug.Log(nextclip.name);
     }
 }

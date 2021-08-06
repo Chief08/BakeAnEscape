@@ -5,6 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class GrandFinale : MonoBehaviour
 {
+    public GameObject screeno;
     private bool onlyonce;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class GrandFinale : MonoBehaviour
         if(gameObject.GetComponent<XRBaseInteractable>().isSelected & onlyonce)
         {
             onlyonce = false;
+            screeno.GetComponent<ScreenSwaps>().UnlockDrawer();
             StartCoroutine(FinalScene());
         }
     }
