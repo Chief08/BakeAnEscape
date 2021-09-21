@@ -16,7 +16,9 @@ public class enable_screen : MonoBehaviour
     public void OnClick()
     {
         Dswitch.transform.Rotate(0, 0, 90, Space.Self);
-        if(gas)
+        gameObject.GetComponent<AudioSource>().Play();
+
+        if (gas)
         {
             cardholder.GetComponent<Login>().enabled = true;
             screen.GetComponent<ScreenSwaps>().ScreenLog();

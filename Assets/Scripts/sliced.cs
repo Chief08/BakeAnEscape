@@ -18,6 +18,7 @@ public class sliced : MonoBehaviour
     {
         if(limit1.activeSelf & limit0.activeSelf) 
         {
+            gameObject.GetComponent<AudioSource>().Play();
             anime.SetFloat("destroyed", 1);
             paintingD.SetActive(true);
             painting.SetActive(false);

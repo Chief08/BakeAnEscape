@@ -6,6 +6,7 @@ public class Login : MonoBehaviour
 {
     public GameObject screen, limit0, limit1, door;
     private bool onlyonce ;
+    public AudioClip audioclip0;
 
     private void Start()
     {
@@ -17,7 +18,8 @@ public class Login : MonoBehaviour
         if(limit0.activeSelf & limit1.activeSelf & onlyonce)
         {
             onlyonce = false;
-            screen.GetComponent<ScreenSwaps>().ScreenRiddle();
+            gameObject.GetComponent<AudioSource>().Play();
+            StartCoroutine(screen.GetComponent<ScreenSwaps>().SoundFirst(audioclip0));
             door.GetComponent<AngleLockFree>().Freee();
         }
     }

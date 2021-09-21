@@ -19,6 +19,7 @@ public class lockMotion : MonoBehaviour
     {
         if(Vector3.Distance(card.transform.position , new Vector3(1.65499997f, 0.727999985f, 0.620000005f)) < 0.2 & card.activeSelf)
         {
+            gameObject.GetComponent<AudioSource>().Play();
             jointt.xMotion = ConfigurableJointMotion.Limited;
         }
     } 

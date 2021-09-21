@@ -11,12 +11,17 @@ public class greenlight : MonoBehaviour
     private Light lt;
     private string alpha;
     private char letter;
+    private bool previousState;
+    public AudioClip Pos, Neg;
+    private GameObject Soundsource;
 
     private void Start()
     {
         lt = leverlight.GetComponent<Light>();
         alpha = leverlight.name;
         letter = alpha[alpha.Length -1];
+        previousState = true;
+        Soundsource = GameObject.Find("PC_desk_bake");
 
     }
 
@@ -32,10 +37,19 @@ public class greenlight : MonoBehaviour
         {
             lt.color = Color.red;
         }
-        if (Colorcheck(lt, Convert(letter)-1))
+        if (Colorcheck(lt, Convert(letter)-1) != previousState)
         {
-            if (lever.GetComponent<FixedJoint>() == null)
-                lever.AddComponent<FixedJoint>();
+            Soundsource.GetComponent<AudioSource>().Stop();
+            if (previousState)
+            {
+                Soundsource.GetComponent<AudioSource>().clip = Neg;
+            }
+            else
+            {
+                Soundsource.GetComponent<AudioSource>().clip = Pos;
+            }
+            Soundsource.GetComponent<AudioSource>().Play();
+            previousState = !previousState;
         }
 
     }

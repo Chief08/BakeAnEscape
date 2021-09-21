@@ -21,7 +21,7 @@ public class DrawerUnlock : MonoBehaviour
 
     public void OnClick()
     {
-        {
+        
             if (console0.GetComponent<LightsCheck>().Ready() & console1.GetComponent<LightsCheck>().Ready())
             {
                 drawer.GetComponent<AngleLockFree>().Freee();
@@ -30,8 +30,10 @@ public class DrawerUnlock : MonoBehaviour
                 card.GetComponent<XRGrabInteractable>().enabled = true;
             }
 
+            gameObject.GetComponent<AudioSource>().Play();
+
             angle = Dswitch.transform.rotation;
             Dswitch.transform.rotation = angle * anglex;
-        }
+        
     }
 }

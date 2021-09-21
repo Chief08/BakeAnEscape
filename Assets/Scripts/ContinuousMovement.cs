@@ -39,7 +39,15 @@ public class ContinuousMovement : MonoBehaviour
         // direction
 
         Quaternion headYaw = Quaternion.Euler(0, rig.cameraGameObject.transform.eulerAngles.y, 0);
-        Vector3 direction = headYaw * new Vector3(inputAxis.x, 0 , inputAxis.y);
+        Vector3 direction = headYaw * new Vector3(inputAxis.x, 0, inputAxis.y);
+        if (direction == new Vector3(0, 0, 0))
+        {
+            gameObject.GetComponent<AudioSource>().volume = 0;
+        }
+        else
+        {
+            gameObject.GetComponent<AudioSource>().volume = 1;
+        }
         character.Move(direction * Time.fixedDeltaTime * speed);
 
         // gravity

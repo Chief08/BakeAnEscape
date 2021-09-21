@@ -23,6 +23,7 @@ public class AngleCheck : MonoBehaviour
         angle = obj.transform.rotation;
         if (angle.x > 0.68f) 
         {   
+            gameObject.GetComponent<AudioSource>().Play();
             if(doStuff)
             {
                 doStuff = !doStuff;

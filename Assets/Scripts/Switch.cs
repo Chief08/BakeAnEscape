@@ -17,6 +17,7 @@ public class Switch : MonoBehaviour
         angle = Dswitch.transform.rotation;
         angle.z = -angle.z;
         Dswitch.transform.rotation = angle;
+        gameObject.GetComponent<AudioSource>().Play();
     }
 
    

@@ -38,6 +38,20 @@ public class ScreenSwaps : MonoBehaviour
         ChangeClip(screenL, emrgency);
     }
 
+    public IEnumerator SoundFirst(AudioClip clipaki) 
+    {
+        VideoPlayer source = screenR.GetComponent<VideoPlayer>();
+        AudioSource audios = screenR.GetComponent<AudioSource>();
+        source.Stop();
+        audios.Stop();
+        audios.clip = clipaki;
+        audios.Play();
+        Debug.Log("wtf");
+        yield return new WaitForSeconds(1);
+        ScreenRiddle();
+        yield return null;
+    }
+
     public void ChangeClip(GameObject screeno , VideoClip nextclip)
     {
         VideoPlayer source = screeno.GetComponent<VideoPlayer>();

@@ -65,6 +65,7 @@ public class FinalDoor : MonoBehaviour
         Vector3 targetposition = library.transform.position + new Vector3(2, 0, 0);
         yield return new WaitForSeconds(0.5f);
         jointt.zMotion = ConfigurableJointMotion.Free;
+        library.GetComponent<AudioSource>().Play();
         while (library.transform.position != targetposition)
         {
             library.transform.position = Vector3.Lerp(library.transform.position, targetposition, Time.deltaTime * speed);
