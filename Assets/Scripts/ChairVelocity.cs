@@ -17,9 +17,16 @@ public class ChairVelocity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (speedo.velocity.magnitude > 0.01 & !source0.isPlaying & GetfloorDist())
+        if (speedo.velocity.magnitude > 0.01  & GetfloorDist())
         {
-            source0.Play();
+            source0.volume = 1;
+            Debug.Log(1);
+        }
+        else
+        {
+            source0.volume = 0;
+
+            Debug.Log(0);
         }
     }
 
@@ -27,4 +34,5 @@ public class ChairVelocity : MonoBehaviour
     {
         return chair.transform.position.y < 0.13;
     }
+
 }

@@ -6,7 +6,7 @@ public class velocitytracking : MonoBehaviour
 {
     public GameObject head, card;
     private Rigidbody speedo;
-    private bool once0;
+    private bool once0, once1;
     private AudioSource source0;
     public AudioClip clipaki;
 
@@ -14,6 +14,7 @@ public class velocitytracking : MonoBehaviour
     {
         speedo = head.GetComponent<Rigidbody>();
         once0 = true;
+        once1 = true;
         source0 = head.GetComponent<AudioSource>();
     }
 
@@ -27,9 +28,10 @@ public class velocitytracking : MonoBehaviour
             card.SetActive(true);
         }
 
-        if(!once0)
+        if(!once0 & once1)
         {
-            StartCoroutine(Waiting(1));
+            once1 = false;
+            StartCoroutine(Waiting(0.5f));
             
         }
     }
