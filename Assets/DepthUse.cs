@@ -16,6 +16,13 @@ public class DepthUse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        WaitLord();
+    }
+
+
+    private  IEnumerator WaitLord()
+    {
+        yield return new WaitForSeconds(0.1f);
     }
 }
+
