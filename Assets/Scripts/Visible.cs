@@ -7,6 +7,7 @@ public class Visible : MonoBehaviour
     public GameObject uvlight;
     public GameObject message;
     public GameObject lightlamp;
+    public bool hint;
 
 
     // Update is called once per frame
@@ -15,6 +16,7 @@ public class Visible : MonoBehaviour
         if (Vector3.Distance(message.transform.position, uvlight.transform.position) < 1 & uvlight.activeSelf & !lightlamp.activeSelf) 
         {
             message.SetActive(true);
+            hint = true;
         }
         else
         {

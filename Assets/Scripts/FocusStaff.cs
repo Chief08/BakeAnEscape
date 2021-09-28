@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FocusStaff : MonoBehaviour
 {
-    private string FocusedLayer = "Focused";
+    private int FocusedLayer;
     private GameObject currentlyFocused;
     private int previousLayer;
 
@@ -12,19 +12,41 @@ public class FocusStaff : MonoBehaviour
     void Start()
     {
         currentlyFocused = gameObject;
+        previousLayer = 8;
+        FocusedLayer = 12;
     }
     
 
-    public void SetFocused(GameObject obj)
+    public void SetFocused()
     {
         previousLayer = currentlyFocused.layer;
-        currentlyFocused.layer = LayerMask.NameToLayer(FocusedLayer);
+        SetLayerRecursively(currentlyFocused, FocusedLayer);
     }
 
 
     public void SetUnfocused()
     {
-        currentlyFocused.layer = previousLayer;
+        SetLayerRecursively(currentlyFocused, previousLayer);
     }
+
+    private void SetLayerRecursively(GameObject obj, int newLayer)
+    {
+        if (null == obj)
+        {
+            return;
+        }
+
+        obj.layer = newLayer;
+
+        foreach (Transform child in obj.transform)
+        {
+            if (null == child)
+            {
+                continue;
+            }
+            SetLayerRecursively(child.gameObject, newLayer);
+        }
+    }
+
 
 }

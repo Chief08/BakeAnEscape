@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FinalDoor : MonoBehaviour
 {
-    public GameObject totoro, radio, uvlight, library, hiddendoor;
+    public GameObject totoro, radio, uvlight, library, hiddendoor,volume;
     private Vector2 xlimits, ylimits, zlimits;
     private ConfigurableJoint jointt;
     public float speed;
@@ -62,6 +62,7 @@ public class FinalDoor : MonoBehaviour
 
     private IEnumerator Movelibrary(float speed)
     {
+        volume.SetActive(false);
         Vector3 targetposition = library.transform.position + new Vector3(2, 0, 0);
         yield return new WaitForSeconds(0.5f);
         jointt.zMotion = ConfigurableJointMotion.Free;

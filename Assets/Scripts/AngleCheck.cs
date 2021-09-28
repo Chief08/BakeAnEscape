@@ -23,9 +23,9 @@ public class AngleCheck : MonoBehaviour
         angle = obj.transform.rotation;
         if (angle.x > 0.68f) 
         {   
-            gameObject.GetComponent<AudioSource>().Play();
             if(doStuff)
             {
+                gameObject.GetComponent<AudioSource>().Play();
                 doStuff = !doStuff;
                 lighto.SetActive(true);
 

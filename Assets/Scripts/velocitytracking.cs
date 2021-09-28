@@ -25,13 +25,16 @@ public class velocitytracking : MonoBehaviour
         {
             once0 = false;
             source0.Play();
-            card.SetActive(true);
+            card.GetComponent<Rigidbody>().useGravity = true;
+            card.GetComponent<BoxCollider>().enabled = true;
+            //card.SetActive(true);
         }
 
         if(!once0 & once1)
         {
             once1 = false;
             StartCoroutine(Waiting(0.5f));
+            head.GetComponent<HeadFocus>().HeadFell();
             
         }
     }
