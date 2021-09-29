@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FinalDoor : MonoBehaviour
 {
-    public GameObject totoro, radio, uvlight, library, hiddendoor,volume;
+    public GameObject totoro, radio, uvlight, library, hiddendoor, volume, VrRig;
     private Vector2 xlimits, ylimits, zlimits;
     private ConfigurableJoint jointt;
     public float speed;
@@ -74,6 +74,8 @@ public class FinalDoor : MonoBehaviour
         }
 
         jointt.zMotion = ConfigurableJointMotion.Locked;
+        yield return new WaitForSeconds(1f);
+        VrRig.GetComponent<MyLoadScene>().Loadlevel("RoomUno");
     }
 
 }

@@ -708,6 +708,7 @@ GameObject:
   - component: {fileID: 1199458107638810254}
   - component: {fileID: 7813537146655847028}
   - component: {fileID: 3099813020012523036}
+  - component: {fileID: 9113543585471991457}
   m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -841,6 +842,20 @@ Skybox:
   m_GameObject: {fileID: 2945952769091026500}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: ff330f6226d1d44838ee63a8824f8def, type: 2}
+--- !u!114 &9113543585471991457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2945952769091026500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f540cbe13a0ec7448a574e149d0fa345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SFX: {fileID: 0}
+  Hint: {fileID: 0}
 --- !u!1 &3049999639660921714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,6 +1277,8 @@ GameObject:
   - component: {fileID: 8926829739806454985}
   - component: {fileID: 4978598062942253473}
   - component: {fileID: 7253372910157592247}
+  - component: {fileID: 1713236307722131889}
+  - component: {fileID: 5446780842731622752}
   m_Layer: 10
   m_Name: VR Rig
   m_TagString: Untagged
@@ -1392,8 +1409,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 0}
-  m_TurnAmount: 1
-  m_DebounceTime: 0.01
+  m_TurnAmount: 3
+  m_DebounceTime: 0.03
   m_EnableTurnLeftRight: 1
   m_EnableTurnAround: 1
   m_TurnUsage: 0
@@ -1496,6 +1513,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1713236307722131889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4852077145564980420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853e03de334299c46875b63950ecc0ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Depth: {fileID: 0}
+  Assist: {fileID: 0}
+--- !u!114 &5446780842731622752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4852077145564980420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a6c4817267860447b0ea8d5185e494d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputSource: 4
+  UIMenu: {fileID: 0}
 --- !u!1 &4930716231542111683
 GameObject:
   m_ObjectHideFlags: 0

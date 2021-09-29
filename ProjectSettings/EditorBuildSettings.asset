@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: b1f08d66609581541814c5d3324a8674
+  - enabled: 1
+    path: Assets/Scenes/RoomUno.unity
+    guid: cf6598db1bbda9642bf1ce580dfb89e1
+  - enabled: 1
+    path: Assets/Scenes/RoomZero.unity
+    guid: 6b8544e319558b045b30285a9005f82b
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 236cf2d6068dd4b4695e3b088aedc7ab, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 19580b6a233a8ef4496bd904c6544bc5, type: 2}

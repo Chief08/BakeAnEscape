@@ -20,7 +20,6 @@ public class HandPresence : MonoBehaviour
         targetDevice = InputDevices.GetDeviceAtXRNode(inputSource);
         Debug.Log(targetDevice.name);
         handAnimator = handModelPrefab.GetComponent<Animator>();
-
     }
 
     void UpdateAnimator() {
@@ -44,6 +43,7 @@ public class HandPresence : MonoBehaviour
         }
 
     }
+
     
 
     // Update is called once per frame
