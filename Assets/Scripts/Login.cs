@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class Login : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class Login : MonoBehaviour
 
     void Update()
     {   
-        if(limit0.activeSelf & limit1.activeSelf & onlyonce)
+        if(limit0.activeSelf & limit1.activeSelf & onlyonce & screen.GetComponent<VideoPlayer>().clip.name == "CardReader")
         {
             onlyonce = false;
             gameObject.GetComponent<AudioSource>().Play();

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+
 public class GrandFinale : MonoBehaviour
 {
-    public GameObject screeno;
+    public GameObject screeno, siren, Vrrig, siren0, lighto, spotlight0, spotlights1;
     private bool onlyonce;
     // Start is called before the first frame update
     void Start()
@@ -27,9 +28,18 @@ public class GrandFinale : MonoBehaviour
     private IEnumerator FinalScene()
     {
         yield return new WaitForSeconds(1);
-        // final animation
-        // load credit scene
+        screeno.GetComponent<ScreenSwaps>().LockEverything();
+        //siren
         Debug.Log("end");
+        siren0.SetActive(true);
+        siren.SetActive(true);
+        siren.GetComponent<AudioSource>().Play();
+        lighto.SetActive(false);
+        spotlight0.SetActive(false);
+        spotlights1.SetActive(false);
+
+        yield return new WaitForSeconds(4);
+        Vrrig.GetComponent<MyLoadScene>().Loadlevel("Menu");
 
     }
 }

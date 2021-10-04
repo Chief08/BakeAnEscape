@@ -6,30 +6,52 @@ using UnityEngine.Video;
 public class ScreenSwaps : MonoBehaviour
 {
     public GameObject screenL,screenR;
-    public VideoClip gas,logL, logR, riddleR, riddleL, emrgency, DrawerR, DrawerL; 
+    public VideoClip gasR, gasL, logL, logR, riddleR, riddleL, emrgency, DrawerR, DrawerL,poweOn;
+    public GameObject Box1, Box2, Box3, Console0, Console1, Volume, Card, CardHolder;
 
-    public void ScreenLog() 
+    private void Start()
     {
+        //StartCoroutine(Testingneeds());
+    }
+
+    public void ScreenLog()
+    {
+        Box2.GetComponent<FocusStaff>().SetUnfocused();
+        CardHolder.GetComponent<FocusStaff>().SetFocused();
+        Card.GetComponent<FocusStaff>().SetFocused();
         ChangeClip(screenR, logR);
         ChangeClip(screenL, logL);
     }
 
     public void ScreenRiddle()
     {
+        CardHolder.GetComponent<FocusStaff>().SetUnfocused();
+        Card.GetComponent<FocusStaff>().SetUnfocused();
+        Console0.GetComponent<FocusStaff>().SetFocused();
+        Console1.GetComponent<FocusStaff>().SetFocused();
+        Box3.GetComponent<FocusStaff>().SetFocused();
         ChangeClip(screenR, riddleR);
         ChangeClip(screenL, riddleL);
     }
-
     public void UnlockDrawer()
     {
         ChangeClip(screenR, DrawerR);
         ChangeClip(screenL, DrawerL);
+        Volume.SetActive(false);
+    }
+
+    public void PowerOn()
+    {
+        ChangeClip(screenR, poweOn);
+        ChangeClip(screenL, poweOn);
     }
 
     public void GasOn()
     {
-        ChangeClip(screenR, gas);
-        ChangeClip(screenL, gas);
+        Box2.GetComponent<FocusStaff>().SetFocused();
+        Box1.GetComponent<FocusStaff>().SetUnfocused();
+        ChangeClip(screenR, gasR);
+        ChangeClip(screenL, gasL);
     }
 
     public void LockEverything()
@@ -61,5 +83,19 @@ public class ScreenSwaps : MonoBehaviour
         source.clip = nextclip;
         source.Play();
         Debug.Log(nextclip.name);
+    }
+
+    private IEnumerator Testingneeds()
+    {
+        yield return new WaitForSeconds(2f);
+        ScreenLog();
+        yield return new WaitForSeconds(2f);
+        ScreenRiddle();
+        yield return new WaitForSeconds(2f);
+        UnlockDrawer();
+        yield return new WaitForSeconds(2f);
+        LockEverything();
+        yield return new WaitForSeconds(2f);
+        GasOn();
     }
 }

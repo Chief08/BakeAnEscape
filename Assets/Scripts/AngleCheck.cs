@@ -5,16 +5,20 @@ using UnityEngine.Video;
 
 public class AngleCheck : MonoBehaviour
 {
-    public GameObject obj,screen,lighto,spotlight0,spotlights1, door2, siren0, siren1;
+    public GameObject obj,screen,screen1,lighto,spotlight0,spotlights1, door2, siren0, siren1;
     private Quaternion angle;
     public bool doStuff;
-    private VideoPlayer player;
+    private VideoPlayer player,player1;
+    private VideoClip previous,previous1;
 
     // Start is called before the first frame update
     void Start()
     {
         player = screen.GetComponent<VideoPlayer>();
-        doStuff = true;
+
+        player1 = screen1.GetComponent<VideoPlayer>();
+        doStuff = false;
+
     }
 
     // Update is called once per frame
@@ -28,6 +32,13 @@ public class AngleCheck : MonoBehaviour
                 gameObject.GetComponent<AudioSource>().Play();
                 doStuff = !doStuff;
                 lighto.SetActive(true);
+                player.Stop();
+                player.clip = previous;
+                player.Play();
+
+                player1.Stop();
+                player1.clip = previous1;
+                player1.Play();
 
             }
             siren1.SetActive(false);
@@ -35,20 +46,29 @@ public class AngleCheck : MonoBehaviour
             spotlight0.SetActive(true);
             spotlights1.SetActive(true);
             door2.GetComponent<AngleLockFree>().Freee();
-
-            player.Play();
+            
+            //if (player.clip.name == "poweron")
+            //{
+            //    screen.GetComponent<ScreenSwaps>().GasOn();
+            //}
         }
         else
         {
             siren0.SetActive(true);
             siren1.SetActive(true);
-            doStuff = true;
+            if (!doStuff)
+            {
+                previous = player.clip;
+                previous1 = player1.clip;
+                screen.GetComponent<ScreenSwaps>().PowerOn();
+                doStuff = true;
+
+            }
             lighto.SetActive(false);
             spotlight0.SetActive(false);
             spotlights1.SetActive(false);
             door2.GetComponent<AngleLockFree>().Lock();
 
-            player.Stop();
         }
     }
 }

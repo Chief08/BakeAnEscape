@@ -7,8 +7,8 @@ public class FinalDoor : MonoBehaviour
     public GameObject totoro, radio, uvlight, library, hiddendoor, volume, VrRig;
     private Vector2 xlimits, ylimits, zlimits;
     private ConfigurableJoint jointt;
-    public float speed;
-    private bool moved;
+    public float speed,timer;
+    private bool moved,load;
 
 
     // Start is called before the first frame update
@@ -18,6 +18,7 @@ public class FinalDoor : MonoBehaviour
         zlimits = new Vector2(2.55f,2f);
         jointt = library.GetComponent<ConfigurableJoint>();
         moved = true;
+        load = false;
     }
 
     // Update is called once per frame
@@ -41,6 +42,11 @@ public class FinalDoor : MonoBehaviour
             moved = false;
             hiddendoor.SetActive(true);
             StartCoroutine(Movelibrary(speed));
+        }
+
+        if (load)
+        {
+            VrRig.GetComponent<MyLoadScene>().Loadlevel("RoomUno");
         }
     }
 
@@ -67,15 +73,15 @@ public class FinalDoor : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         jointt.zMotion = ConfigurableJointMotion.Free;
         library.GetComponent<AudioSource>().Play();
-        while (library.transform.position != targetposition)
+        timer = Time.time;
+        while (timer + 3 > Time.time)
         {
             library.transform.position = Vector3.Lerp(library.transform.position, targetposition, Time.deltaTime * speed);
             yield return new WaitForEndOfFrame();
         }
-
         jointt.zMotion = ConfigurableJointMotion.Locked;
         yield return new WaitForSeconds(1f);
-        VrRig.GetComponent<MyLoadScene>().Loadlevel("RoomUno");
+        load = true;
     }
 
 }
