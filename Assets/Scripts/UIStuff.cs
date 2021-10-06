@@ -13,6 +13,11 @@ public class UIStuff : MonoBehaviour
         VRrig.GetComponent<MyLoadScene>().Loadlevel("RoomZero");
     }
 
+    public void Training()
+    {
+        VRrig.GetComponent<MyLoadScene>().Loadlevel("Training");
+    }
+
     public void MainMenuButton()
     {
         VRrig.GetComponent<MyLoadScene>().Loadlevel("Menu");

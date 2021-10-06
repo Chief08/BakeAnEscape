@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FinalDoor : MonoBehaviour
 {
-    public GameObject totoro, radio, uvlight, library, hiddendoor, volume, VrRig;
+    public GameObject totoro, radio, uvlight, library, hiddendoor, volume, VrRig, loadpoint;
     private Vector2 xlimits, ylimits, zlimits;
     private ConfigurableJoint jointt;
     public float speed,timer;
@@ -40,8 +40,14 @@ public class FinalDoor : MonoBehaviour
         if (a&b&c&moved)
         {
             moved = false;
-            hiddendoor.SetActive(true);
             StartCoroutine(Movelibrary(speed));
+        }
+
+        Debug.Log(Vector3.Distance(VrRig.transform.position, loadpoint.transform.position));
+
+        if (Vector3.Distance(VrRig.transform.position,loadpoint.transform.position ) < 2.7)
+        {
+            load = true;
         }
 
         if (load)
@@ -74,13 +80,12 @@ public class FinalDoor : MonoBehaviour
         jointt.zMotion = ConfigurableJointMotion.Free;
         library.GetComponent<AudioSource>().Play();
         timer = Time.time;
-        while (timer + 3 > Time.time)
+        while (timer + 20 > Time.time)
         {
             library.transform.position = Vector3.Lerp(library.transform.position, targetposition, Time.deltaTime * speed);
             yield return new WaitForEndOfFrame();
         }
         jointt.zMotion = ConfigurableJointMotion.Locked;
-        yield return new WaitForSeconds(1f);
         load = true;
     }
 

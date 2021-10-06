@@ -38,8 +38,8 @@ public class GrandFinale : MonoBehaviour
         spotlight0.SetActive(false);
         spotlights1.SetActive(false);
 
-        yield return new WaitForSeconds(4);
-        Vrrig.GetComponent<MyLoadScene>().Loadlevel("Menu");
+        yield return new WaitForSeconds(10);
+        Vrrig.GetComponent<MyLoadScene>().Loadlevel("Ending");
 
     }
 }

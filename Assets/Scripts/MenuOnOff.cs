@@ -32,7 +32,6 @@ public class MenuOnOff : MonoBehaviour
 
         if (targetDevice.TryGetFeatureValue(CommonUsages.menuButton, out bool OnOff))
         {
-            Debug.Log(OnOff);
             if (previousstate != OnOff & OnOff)
             {
                 UIMenu.SetActive(!UIMenu.activeSelf);

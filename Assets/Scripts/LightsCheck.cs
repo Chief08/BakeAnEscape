@@ -37,7 +37,6 @@ public class LightsCheck : MonoBehaviour
                 y++;
             }
         }
-        Debug.Log(y);
         return (y==10);
     }
 

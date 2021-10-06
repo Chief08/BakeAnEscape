@@ -16,7 +16,7 @@ public class ScreenSwaps : MonoBehaviour
 
     public void ScreenLog()
     {
-        Box2.GetComponent<FocusStaff>().SetUnfocused();
+        Box3.GetComponent<FocusStaff>().SetUnfocused();
         CardHolder.GetComponent<FocusStaff>().SetFocused();
         Card.GetComponent<FocusStaff>().SetFocused();
         ChangeClip(screenR, logR);
@@ -29,7 +29,7 @@ public class ScreenSwaps : MonoBehaviour
         Card.GetComponent<FocusStaff>().SetUnfocused();
         Console0.GetComponent<FocusStaff>().SetFocused();
         Console1.GetComponent<FocusStaff>().SetFocused();
-        Box3.GetComponent<FocusStaff>().SetFocused();
+        Box2.GetComponent<FocusStaff>().SetFocused();
         ChangeClip(screenR, riddleR);
         ChangeClip(screenL, riddleL);
     }
@@ -48,7 +48,7 @@ public class ScreenSwaps : MonoBehaviour
 
     public void GasOn()
     {
-        Box2.GetComponent<FocusStaff>().SetFocused();
+        Box3.GetComponent<FocusStaff>().SetFocused();
         Box1.GetComponent<FocusStaff>().SetUnfocused();
         ChangeClip(screenR, gasR);
         ChangeClip(screenL, gasL);
