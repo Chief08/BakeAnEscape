@@ -8,7 +8,7 @@ public class FinalDoor : MonoBehaviour
     private Vector2 xlimits, ylimits, zlimits;
     private ConfigurableJoint jointt;
     public float speed,timer;
-    private bool moved,load;
+    private bool moved,load,load0;
 
 
     // Start is called before the first frame update
@@ -19,6 +19,7 @@ public class FinalDoor : MonoBehaviour
         jointt = library.GetComponent<ConfigurableJoint>();
         moved = true;
         load = false;
+        load0 = false;
     }
 
     // Update is called once per frame
@@ -43,9 +44,8 @@ public class FinalDoor : MonoBehaviour
             StartCoroutine(Movelibrary(speed));
         }
 
-        Debug.Log(Vector3.Distance(VrRig.transform.position, loadpoint.transform.position));
 
-        if (Vector3.Distance(VrRig.transform.position,loadpoint.transform.position ) < 2.7)
+        if (Vector3.Distance(VrRig.transform.position,loadpoint.transform.position ) < 2.7 & load0)
         {
             load = true;
         }
@@ -80,6 +80,7 @@ public class FinalDoor : MonoBehaviour
         jointt.zMotion = ConfigurableJointMotion.Free;
         library.GetComponent<AudioSource>().Play();
         timer = Time.time;
+        load0 = true;
         while (timer + 20 > Time.time)
         {
             library.transform.position = Vector3.Lerp(library.transform.position, targetposition, Time.deltaTime * speed);

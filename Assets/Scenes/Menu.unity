@@ -1257,6 +1257,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 853e03de334299c46875b63950ecc0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &440734510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440734508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9987aad11b57449b7def49794cfb45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &558444414
 GameObject:
   m_ObjectHideFlags: 0
@@ -5041,6 +5053,14 @@ PrefabInstance:
     - target: {fileID: 5446780842731622752, guid: ee679526e8f78424191270fc2c07965a, type: 3}
       propertyPath: inputSource
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8974282525427868790, guid: ee679526e8f78424191270fc2c07965a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8974282525735661523, guid: ee679526e8f78424191270fc2c07965a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9113543585471991457, guid: ee679526e8f78424191270fc2c07965a, type: 3}
       propertyPath: SFX

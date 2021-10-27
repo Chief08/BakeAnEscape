@@ -19,7 +19,7 @@ public class GoToMenu : MonoBehaviour
         dist1 = Vector3.Distance(gameObject.transform.position, Paper.transform.position);
         dist2 = Vector3.Distance(gameObject.transform.position, Ball.transform.position);
 
-        if (dist0 > 100 & dist1> 100 & dist2>100)
+        if (dist0 > 50 & dist1> 50 & dist2>50)
         {
             SceneManager.LoadScene("Menu");
         }
